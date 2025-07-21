@@ -13,7 +13,7 @@ print("Predict your exam score by answering \n"
 # query age
 age = int(input("What is your age? ").strip())
 
-# query gender
+# query genderS
 genders = {'male', 'female', 'other'}
 gender_conversion = {"male": 0, "female": 1, "other": 2}
 
