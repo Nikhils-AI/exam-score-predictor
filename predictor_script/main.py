@@ -1,3 +1,4 @@
+from conversion_safety import convert_int_safe, convert_float_safe
 from joblib import load
 import numpy as np
 
@@ -15,9 +16,11 @@ age_range = tuple(range(0, 111))
 age = input("\nWhat is your age? [0 - 110]: ")
 
 while True:
-    if age in age_range and isinstance():
-        break
-    age = input(f"Out of range: {age}\nWhat is your age? [0 - 110]: ")
+    if convert_int_safe(age):
+        if int(age) in age_range:
+            break
+    age = input(f"Out of Range/Not Integer: {age}\n"
+                f"What is your age? [0 - 110]: ")
 
 age = int(age)
 
@@ -40,33 +43,42 @@ study_hours = input("\nOn average, how many hours did you study per day? "
                         "[0 - 24]: ")
 
 while True:
-    if study_hours in hours_range and type(study_hours) == 'int':
-        break
-    study_hours = input(f"Out of range: {study_hours}\n"
+    if convert_int_safe(study_hours):
+        if int(study_hours) in hours_range:
+            break
+    study_hours = input(f"Out of Range/Not Integer: {study_hours}\n"
                             f"On average, how many hours did you study per day?"
                             f" [0 - 24]: ")
 
+study_hours = int(study_hours)
+
 # query the user's social media hours per day
-social_media_hours = int(input("\nOn average, how many hours did you spend on "
-                               "social media per day? [0 - 24]: "))
+social_media_hours = input("\nOn average, how many hours did you spend on "
+                               "social media per day? [0 - 24]: ")
 
 while True:
-    if social_media_hours in hours_range:
-        break
-    social_media_hours = int(input(f"Out of range: {social_media_hours}\n"
-                            f"On average, how many hours did you spend on "
-                            f"social media per day? [0 - 24]: "))
+    if convert_int_safe(social_media_hours):
+        if int(social_media_hours) in hours_range:
+            break
+    social_media_hours = input(f"Out of Range/Not Integer: {social_media_hours}"
+                               f"\nOn average, how many hours did you spend on"
+                               f" social media per day? [0 - 24]: ")
+
+social_media_hours = int(social_media_hours)
 
 # query the user's netflix hours per day
-netflix_hours = int(input("\nOn average, how many hours did you spend on "
-                          "netflix per day? [0 - 24]: "))
+netflix_hours = input("\nOn average, how many hours did you spend on "
+                          "netflix per day? [0 - 24]: ")
 
 while True:
-    if netflix_hours in hours_range:
-        break
-    netflix_hours = int(input(f"Out of range: {netflix_hours}\n"
+    if convert_int_safe(netflix_hours):
+        if int(netflix_hours) in hours_range:
+            break
+    netflix_hours = input(f"Out of Range/Not Integer: {netflix_hours}\n"
                               f"On average, how many hours did you spend on "
-                              f"netflix per day? [0 - 24]: "))
+                              f"netflix per day? [0 - 24]: ")
+
+netflix_hours = int(netflix_hours)
 
 # query the user's employment status
 emp_status_choices = {'yes', 'no'}
@@ -83,26 +95,32 @@ emp_status = emp_status_conversion[emp_status]
 
 # query the user's attendance percentage
 attendance_pct_range = tuple(np.arange(0.00, 100.01, 0.01).round(2).tolist())
-attendance_pct = float(input("\nWhat was your class attendance percentage? "
-                           "[0.00 - 100.00]: "))
+attendance_pct = input("\nWhat was your class attendance percentage? "
+                           "[0.00 - 100.00]: ")
 
 while True:
-    if attendance_pct in attendance_pct_range:
-        break
-    attendance_pct = float(input(f"Out of range: {attendance_pct}\n"
+    if convert_float_safe(attendance_pct):
+        if float(attendance_pct) in attendance_pct_range:
+            break
+    attendance_pct = input(f"Out of Range/Not Float: {attendance_pct}\n"
                                "What was your class attendance percentage? "
-                               "[0.00 - 100.00]: "))
+                               "[0.00 - 100.00]: ")
+
+attendance_pct = float(attendance_pct)
 
 # query the user's sleep hours per day
-sleep_hours = int(input("\nOn average, how many hours did you sleep per night? "
-                        "[0 - 24]: "))
+sleep_hours = input("\nOn average, how many hours did you sleep per night? "
+                        "[0 - 24]: ")
 
 while True:
-    if sleep_hours in hours_range:
-        break
-    sleep_hours = int(input(f"Invalid choice: {sleep_hours}\n"
+    if convert_int_safe(sleep_hours):
+        if int(sleep_hours) in hours_range:
+            break
+    sleep_hours = input(f"Out of Range/Not Integer: {sleep_hours}\n"
                             f"On average, how many hours did you sleep per"
-                            f"night? [0 - 24]: "))
+                            f"night? [0 - 24]: ")
+
+sleep_hours = int(sleep_hours)
 
 # query the user's diet quality
 diet_quality_choices = {'poor', 'fair', 'good'}
@@ -122,15 +140,18 @@ diet_quality = diet_quality_conversion[diet_quality]
 
 # query the user's exercise_frequency
 exercise_freq_range = tuple(range(0, 8))
-exercise_freq = int(input("\nHow many days per week do you exercise? "
-                          "[0 - 7]: "))
+exercise_freq = input("\nHow many days per week did you exercise? "
+                          "[0 - 7]: ")
 
 while True:
-    if exercise_freq in exercise_freq_range:
-        break
-    exercise_freq = int(input(f"Invalid choice: {exercise_freq}\n"
+    if convert_int_safe(exercise_freq):
+        if int(exercise_freq) in exercise_freq_range:
+            break
+    exercise_freq = input(f"Out of Range/Not Integer: {exercise_freq}\n"
                               f"How many days per week do you exercise? "
-                              f"[0 - 7]: "))
+                              f"[0 - 7]: ")
+
+exercise_freq = int(exercise_freq)
 
 # query the user's parental education level
 parent_edu_choices = {'high school', 'bachelor', 'master'}
@@ -166,15 +187,18 @@ internet_quality = internet_quality_conversion[internet_quality]
 
 # query the user's mental health rating
 mental_health_range = tuple(range(0, 11))
-mental_health = int(input("\nWhat is your mental health rating? "
-                          "[0 (Worst) - 10 (Best)]: "))
+mental_health = input("\nWhat is your mental health rating? "
+                          "[0 (Worst) - 10 (Best)]: ")
 
 while True:
-    if mental_health in mental_health_range:
-        break
-    mental_health = int(input(f"Invalid choice: {mental_health}\n"
+    if convert_int_safe(mental_health):
+        if int(mental_health) in mental_health_range:
+            break
+    mental_health = input(f"Out of Range/Not Integer: {mental_health}\n"
                               f"What is your mental health rating?"
-                              f"[0 (Worst) - 10 (Best): "))
+                              f"[0 (Worst) - 10 (Best): ")
+
+mental_health = int(mental_health)
 
 # query the user's extracurricular participation
 extra_curr_choices = {'yes', 'no'}
@@ -201,13 +225,13 @@ results = np.array([age, gender, study_hours, social_media_hours,
 # output exam score prediction with pipe
 score_prediction = pipe.predict(results)[0]
 
-if score_prediction < 0:
-    score_prediction = 0
+if score_prediction < 0.0:
+    score_prediction = 0.0
 
-if score_prediction > 100:
-    score_prediction = 100
+if score_prediction > 100.0:
+    score_prediction = 100.0
 
-print(f"Predicted Exam Score: {score_prediction}")
+print(f"\nPredicted Exam Score: {round(score_prediction, 2)}%")
 
 
 
