@@ -12,12 +12,14 @@ print("Predict your exam score by answering \n"
 
 # query the user's age
 age_range = tuple(range(0, 111))
-age = int(input("\nWhat is your age? [0 - 110]: "))
+age = input("\nWhat is your age? [0 - 110]: ")
 
 while True:
-    if age in age_range:
+    if age in age_range and isinstance():
         break
-    age = int(input(f"Out of range: {age}\nWhat is your age? [0 - 110]: "))
+    age = input(f"Out of range: {age}\nWhat is your age? [0 - 110]: ")
+
+age = int(age)
 
 # query the user's gender
 gender_choices = {'male', 'female', 'other'}
@@ -34,15 +36,15 @@ gender = gender_conversion[gender]
 
 # query the user's study hours per day
 hours_range = tuple(range(0, 25))
-study_hours = int(input("\nOn average, how many hours did you study per day? "
-                        "[0 - 24]: "))
+study_hours = input("\nOn average, how many hours did you study per day? "
+                        "[0 - 24]: ")
 
 while True:
-    if study_hours in hours_range:
+    if study_hours in hours_range and type(study_hours) == 'int':
         break
-    study_hours = int(input(f"Out of range: {study_hours}\n"
+    study_hours = input(f"Out of range: {study_hours}\n"
                             f"On average, how many hours did you study per day?"
-                            f" [0 - 24]: "))
+                            f" [0 - 24]: ")
 
 # query the user's social media hours per day
 social_media_hours = int(input("\nOn average, how many hours did you spend on "
