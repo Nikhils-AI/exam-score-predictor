@@ -40,17 +40,31 @@ study_hours = int(input("On average, how many hours did you study per day? "
 while True:
     if study_hours in hours_range:
         break
-    study_hours = int(input(f"Out of range: {study_hours}.\n"
+    study_hours = int(input(f"Out of range: {study_hours}\n"
                             f"On average, how many hours did you study per day?"
                             f" [0-24]: "))
 
 # query the user's social media hours per day
 social_media_hours = int(input("On average, how many hours did you spend on "
-                               "social media per day? "))
+                               "social media per day? [0-24]: "))
+
+while True:
+    if social_media_hours in hours_range:
+        break
+    social_media_hours = int(input(f"Out of range: {social_media_hours}\n"
+                            f"On average, how many hours did you spend on"
+                            f"social media per day? [0-24]: "))
 
 # query the user's netflix hours per day
 netflix_hours = int(input("On average, how many hours did you spend on "
                           "netflix per day? "))
+
+while True:
+    if netflix_hours in hours_range:
+        break
+    netflix_hours = int(input(f"Out of range: {netflix_hours}\n"
+                              f"On average, how many hours did you spend on"
+                              f"netflix per day? [0-24]: "))
 
 # query the user's employment status
 emp_status_choices = {'yes', 'no'}
@@ -66,12 +80,27 @@ while True:
 job_status = emp_status_conversion[emp_status]
 
 # query the user's attendance percentage
-attendance_pct = int(input("What is your attendance percentage? "
-                           "[enter decimal]: "))
+attendance_pct_range = tuple(range(0, 101))
+attendance_pct = int(input("What was your class attendance percentage? "
+                           "[0-100]: "))
 
+while True:
+    if attendance_pct in attendance_pct_range:
+        break
+    attendance_pct = int(input(f"Out of range: {attendance_pct}\n"
+                               "What was your class attendance percentage? "
+                               "[0-100]: "))
 
 # query the user's sleep hours per day
-sleep_hours = int(input("On average, how many hours do you sleep per night? "))
+sleep_hours = int(input("On average, how many hours did you sleep per night? "
+                        "[0-24]: "))
+
+while True:
+    if sleep_hours in hours_range:
+        break
+    sleep_hours = int(input(f"Invalid choice: {sleep_hours}\n"
+                            f"On average, how many hours did you sleep per"
+                            f"night? [0-24]: "))
 
 # query the user's diet quality
 diet_quality_choices = {'poor', 'fair', 'good'}
@@ -89,7 +118,19 @@ while True:
 diet_quality = diet_quality_conversion[diet_quality]
 
 # query the user's exercise_frequency
-exercise_frequency = int(input("How many days per week do you exercise?"))
+exercise_freq_range = tuple(range(0, 8))
+exercise_freq = int(input("How many days per week do you exercise? [0-7]: "))
+
+while True:
+    if exercise_freq in exercise_freq_range:
+        break
+    exercise_freq = int(input(f"Invalid choice: {exercise_freq}\n"
+                              f"How many days per week do you exercise? [0-7]"
+                              ": "))
+
+
+
+
 
 
 
