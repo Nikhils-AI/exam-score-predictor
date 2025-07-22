@@ -7,7 +7,7 @@ The _Exam Score Predictor_ is a machine learning-powered Python script that enab
 - Predicts exam score (0 - 100%) using a trained machine learning linear regression model
 - Clean script interface
 - Takes inputs such as study hours, social media hours, sleep hours, etc. as feature values
-- Built using Python, Pandas, NumPy, Matplotlib, and Joblib
+- Built using Python, Scikit-learn, Pandas, NumPy, Matplotlib, and Joblib
 
 ---
 
