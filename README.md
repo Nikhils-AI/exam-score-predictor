@@ -49,7 +49,7 @@ exam-score-predictor/
 |
 |── scripts/
 | |── conversion_safety.py                # module containing helper functions to verify safe data type conversion
-  └── main.py                             # main script file
+| └── main.py                             # main script file
 |
 |── .gitignore
 |── README.md
