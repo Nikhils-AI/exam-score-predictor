@@ -14,17 +14,17 @@ The _Exam Score Predictor_ is a machine learning-powered Python script that enab
 ## **Windows Installation**
 
 1. Clone the repo:
-   '''cmd
+   ```cmd
    git clone https://github.com/Nikhils-AI/exam-score-predictor.git
    cd exam-score-predictor
 
 2. Create and activate a virtual environment:
-   '''cmd
+   ```cmd
    python -m venv venv
    venv\Scripts\activate
 
 3. Install dependencies:
-   '''cmd
+   ```cmd
    pip install -r requirements.txt
 
 4. Run script:
@@ -32,23 +32,26 @@ The _Exam Score Predictor_ is a machine learning-powered Python script that enab
 
    ## **Project Structure**
 
-   exam-score-predictor/
+<pre><code>
+exam-score-predictor/
 │
 ├── data/
-│ └── student_habits_performance.csv # raw dataset
+│ └── student_habits_performance.csv      # raw dataset
 │
 ├── model/
-│ └── pipe.joblib # trained pipeline
+│ └── pipe.joblib                         # trained pipeline
 │
 ├── notebooks/
-| └── exam_score_predictor.ipynb # where model was trained
+| └── exam_score_predictor.ipynb          # where model was trained
 |
 |── scripts/
-| |── conversion_safety.py # module containing functions
+| |── conversion_safety.py                # module containing functions
   └── main.py # script file
 |
 |── .gitignore
-|
 ├── requirements.txt
 └──README.md
+</code></pre>
+   
+
    
