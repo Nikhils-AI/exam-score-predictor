@@ -1,17 +1,17 @@
-# **Exam Score Predictor**
+# 🧾 **Exam Score Predictor**
 
 The _Exam Score Predictor_ is a machine learning-powered Python script that enables the user to predict their expected exam score based on their habits and lifestyle. 
 
-## **Features**
+## 📌 **Features**
 
 - Predicts exam score (0 - 100%) using a trained machine learning linear regression model
 - Clean script interface
 - Takes inputs such as study hours, social media hours, sleep hours, etc. as feature values
-- Built using Python, Pandas, Scikit-learn, and Joblib
+- Built using Python, Pandas, NumPy, Matplotlib, and Joblib
 
 ---
 
-## **Windows Installation**
+## 🛠️ **Windows Installation**
 
 1. Clone the repo:
    ```cmd
@@ -28,27 +28,31 @@ The _Exam Score Predictor_ is a machine learning-powered Python script that enab
    pip install -r requirements.txt
 
 4. Run script:
+   ```cmd
    python scripts/main.py
 
-   ## **Project Structure**
+---
+
+## 📁 **Project Structure**
 
 <pre><code>
 exam-score-predictor/
 │
 ├── data/
-│ └── student_habits_performance.csv      # raw dataset
+│ └── student_habits_performance.csv      # Contains the raw CSV 
 │
 ├── model/
-│ └── pipe.joblib                         # trained pipeline
+│ └── pipe.joblib                         # The final pipeline 
 │
 ├── notebooks/
-| └── exam_score_predictor.ipynb          # where model was trained
+| └── exam_score_predictor.ipynb          # jupyter notebook for inspecting data and selecting final model
 |
 |── scripts/
-| |── conversion_safety.py                # module containing functions
-  └── main.py # script file
+| |── conversion_safety.py                # module containing helper functions to verify safe data type conversion
+  └── main.py                             # main script file
 |
 |── .gitignore
+|── README.md
 ├── requirements.txt
 └──README.md
 </code></pre>
