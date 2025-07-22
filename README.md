@@ -29,7 +29,8 @@ The _Exam Score Predictor_ is a machine learning-powered Python script that enab
 
 4. Run script:
    ```cmd
-   python scripts/main.py
+   cd scripts
+   python main.py
 
 ---
 
