@@ -53,8 +53,7 @@ exam-score-predictor/
 |
 |── .gitignore
 |── README.md
-├── requirements.txt
-└──README.md
+└──requirements.txt
 </code></pre>
    
 
