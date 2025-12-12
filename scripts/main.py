@@ -3,7 +3,7 @@ from joblib import load
 import numpy as np
 
 # load the final pipe from notebook
-pipe = load('../model/pipe.joblib')
+pipe = load('../model/stack_reg.joblib')
 
 # begin the python script
 print("\t\tEXAM SCORE PREDICTOR\t\t")
